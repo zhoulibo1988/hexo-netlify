@@ -1,0 +1,668 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 平凡的世界
+subtitle: 技术改变世界
+description: 打造高质量的IT技术文档
+keywords:
+author: Mr.Zhou
+language: zh-CN
+timezone: UTC
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://ichigua.cn/
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type:
+  
+theme_config:
+
+  # ============================================================= #
+  # ====================== Scheme Settings ====================== #
+  # ========================== 主题方案 ========================== #
+  # ============================================================= #
+  # scheme: Muse
+  # scheme: Mist
+  # scheme: Pisces
+  scheme: Gemini
+  # 侧边栏头像设置
+  favicon:
+    small: /images/favicon.jpg
+    medium: /images/favicon.jpg
+    apple_touch_icon: /images/26712945.jpg
+  # ============================================================= #
+  # ================= Menu Information Settings ================= #
+  # ======================== 菜单信息设置 ========================= #
+  # ============================================================= #
+
+  menu:
+    home: / || home
+    archives: /archives/ || archive
+    about: /about/ || user
+    # categories: /categories/ || th
+    # tags: /tags/ || tags
+    # sitemap: /sitemap.xml || sitemap
+    # commonweal: /404/ || heartbeat
+
+  menu_settings:
+    icons: true
+    badges: true
+# ============================================================= #
+  # ================= Site Information Settings ================= #
+  # ======================== 页脚信息设置 ========================= #
+  # ============================================================= #
+  footer:
+    since: 2019
+    icon:
+      name: heart
+      animated: true
+      color: "#808080"
+    copyright: 平凡的世界 All Right Reserved
+    # -------------------------------------------------------------
+    powered:
+      enable: true
+      version: true
+    theme:
+      enable: true
+      version: true
+    # -------------------------------------------------------------
+    # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+    # http://www.miitbeian.gov.cn
+    beian:
+      enable: true
+      icp: 粤ICP备17161425号-1
+
+  # Creative Commons 4.0 International License.
+  # See: https://creativecommons.org/share-your-work/licensing-types-examples
+  # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+  # You can set a language value if you prefer a translated version of CC license.
+  # CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
+  # Valid values of language: deed.zh, deed.fr, deed.de , etc.
+  creative_commons: # 版权标识
+    license: by
+    sidebar: false
+    post: true
+
+  # ============================================================= #
+  # ===================== Sidebar Settings ====================== #
+  # ========================= 侧边栏设置 ========================== #
+  # ============================================================= #
+  avatar: # 头像
+    url: /images/26712945.jpg
+    rounded: true
+    opacity: 1
+    rotated: false
+  social: # 社交
+    GitHub: https://github.com/zhoulibo1988 || github
+    E-Mail: mailto:zhoulibo_vip@163.com || envelope
+    #Twitter: https://twitter.com/paynezhuang || twitter
+    #Weibo: https://weibo.com/paynezhuang || weibo
+  social_icons: # 社交图标
+    enable: true
+    icons_only: false
+    transition: true
+  github_banner: https://github.com/zhoulibo1988 || Paynezhuang GitHub
+
+# 工具栏目录
+  toc:
+    enable: true
+    # Automatically add list number to toc.
+    # 自动将列表编号添加到toc
+    number: true
+    # If true, all words will placed on next lines if header width longer then sidebar width.
+    # 如果标题宽度比侧边栏宽度长，则所有单词都将放在下一行
+    wrap: true
+    # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front Matter.
+    # 生成目录的最大深度，例如 h1 h2 h3 h4 ..
+    max_depth: 6
+  sidebar:
+    # Sidebar Position, available values: left | right (only for Pisces | Gemini).
+    # 侧边栏显示位置
+    position: left
+    # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
+    # 侧边栏与顶部的位置
+    offset: 12
+    # Back to top in sidebar.
+    # 侧边栏显示回到顶部按钮
+    b2t: true
+    # Scroll percent label in b2t button.
+    # 回到顶部按钮中显示百分比
+    scrollpercent: true
+
+  # ============================================================= #
+  # ======================= Post Settings ======================= #
+  # ========================== 文章设置 ========================== #
+  # ============================================================= #
+  # Automatically scroll page to section which is under <!-- more --> mark.
+  # 自动将页面滚动到 <!-- more --> 标记下的部分
+  scroll_to_more: true
+
+  # Automatically saving scroll position on each post / page in cookies.
+  # 自动保存cookie中每个帖子/页面的滚动位置
+  save_scroll: true
+
+  # Automatically excerpt description in homepage as preamble text.
+  # 自动摘录主页中的描述作为前导文本
+  excerpt_description: true
+
+  # Automatically Excerpt. Not recommend.
+  # 自动摘录
+  # Use <!-- more --> in the post to control excerpt accurately.
+  # 在帖子中使用 <!-- more --> 来准确控制摘录
+  auto_excerpt:
+    enable: true
+    length: 150
+
+  # Read more button
+  # 阅读更多按钮
+  # If true, the read more button would be displayed in excerpt section.
+  # 如果为true，则会在摘录部分显示read more按钮
+  read_more_btn: true
+
+  # Post meta display settings
+  post_meta:
+    item_text: true
+    created_at: true
+    updated_at:
+      enabled: false
+      # If true, show updated date label only if `updated date` different from `created date` (post edited in another day than was created).
+      # And if post will edited in same day as created, edited time will show in popup title under created time label.
+      # If false show anyway, but if post edited in same day, show only edited time.
+      another_day: true
+    categories: true
+
+  # Post wordcount display settings
+  # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+  symbols_count_time:
+    symbols: true
+    time: true
+    total_symbols: true
+    total_time: true
+
+  # 代码块
+  codeblock:
+    # Manual define the border radius in codeblock
+    # Leave it empty for the default 1
+    border_radius:
+    # Add copy button on codeblock
+    copy_button:
+      enable: true
+      # Show text copy result
+      show_result: false
+      # Style: only 'flat' is currently available, leave it blank if you prefer default theme
+      style:
+
+  # Reading progress bar 阅读进度条
+  # Dependencies: https://github.com/theme-next/theme-next-reading-progress
+  reading_progress:
+    enable: false
+    color: "#37c6c0"
+    height: 2px
+
+  # Wechat Subscriber 微信订阅
+  wechat_subscriber:
+    #enabled: true
+    #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
+    #description: e.g. subscribe to my blog by scanning my public wechat account
+
+  # 捐赠
+  reward:
+    enable: true
+    #comment: Donate comment here
+    wechatpay: /images/wechatpay.png
+    alipay: /images/alipay.png
+    #bitcoin: /images/bitcoin.jpg
+
+  # Related popular posts
+  # Dependencies: https://github.com/tea3/hexo-related-popular-posts
+  related_posts: # 相关文章
+    enable: true
+    title: 相关文章 # custom header, leave empty to use the default one
+    display_in_home: false
+    params:
+      maxCount: 5
+      #PPMixingRate: 0.0
+      #isDate: false
+      #isImage: false
+      #isExcerpt: false
+
+  # 显示文章阅读数
+  # Show number of visitors to each article.
+  # You can visit https://leancloud.cn to get AppID and AppKey.
+  leancloud_visitors:
+    enable: true
+    app_id: fU17d9o67s0geXihjWWyejLd-gzGzoHsz #<app_id>
+    app_key: d3qlJFPnpCxh9cIzjd0VOWuA #<app_key>
+    # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+    # If you don't care about security in leancloud counter and just want to use it directly
+    # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
+    security: false
+    betterPerformance: false
+
+  # Show Views / Visitors of the website / page with busuanzi.
+  # Get more information on http://ibruce.info/2015/04/04/busuanzi
+  busuanzi_count:
+    enable: true
+    total_visitors: true
+    total_visitors_icon: user
+    total_views: true
+    total_views_icon: eye
+    post_views: false
+    post_views_icon: eye
+
+  # 阅读进度
+  # Reading progress bar
+  # Dependencies: https://github.com/theme-next/theme-next-reading-progress
+  # reading_progress:
+  #   enable: true
+  #   color: "#37c6c0"
+  #   height: 2px
+
+  # ============================================================= #
+  # ==================== Misc Theme Settings ==================== #
+  # ========================== 杂项设置 ========================== #
+  # ============================================================= #
+  # 减少在宽度较窄的移动设备上的填充/边距缩进
+  mobile_layout_economy: true
+  # Code Highlight theme
+  # Available values: normal | night | night eighties | night blue | night bright
+  # https://github.com/chriskempson/tomorrow-theme
+  # 高亮主题
+  highlight_theme: night
+
+  # Enable "cheers" for archive page.
+  # 存档页欢呼
+  # cheers_enabled: true
+
+  # ============================================================= #
+  # ====================== Search Services ====================== #
+  # ========================== 搜索服务 ========================== #
+  # ============================================================= #
+  # Local search
+  # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+  local_search: # 搜索功能
+    enable: true
+    # If auto, trigger search by changing input.
+    # If manual, trigger search by pressing enter key or search button.
+    trigger: auto
+    # Show top n results per article, show all results by setting to -1
+    top_n_per_article: 1
+    # Unescape html strings to the readable one.
+    unescape: false
+
+  # ============================================================= #
+  # ====================== Bookmark Support ===================== #
+  # ========================== 书签支持 ========================== #
+  # ============================================================= #
+  # Bookmark Support
+  # Dependencies: https://github.com/theme-next/theme-next-bookmark
+  bookmark: # 书签
+    enable: true
+    # If auto, save the reading position when closing the page or clicking the bookmark-icon.
+    # If manual, only save it by clicking the bookmark-icon.
+    save: auto
+
+  # ============================================================= #
+  # ======================== Tag Plugins ======================== #
+  # ========================== 标签插件 ========================== #
+  # ============================================================= #
+  note:
+    style: simple
+    icons: true
+    border_radius: 0
+    light_bg_offset: -3
+
+  tabs:
+    enable: true
+    transition:
+      tabs: true
+      labels: true
+    border_radius: 0
+
+
+  # ============================================================= #
+  # ===================== External Libraries ==================== #
+  # =========================== 外部库 =========================== #
+  # ============================================================= #
+  motion: # 动画
+    enable: true
+    async: true
+    transition:
+      post_block: fadeIn
+      post_header: slideDownIn
+      post_body: slideDownIn
+      coll_header: slideLeftIn
+      # Only for Pisces | Gemini.
+      sidebar: slideUpIn
+
+  # Fancybox. There is support for old version 2 and new version 3.
+  # Choose only any one variant, do not need to install both.
+  # To install 2.x: https://github.com/theme-next/theme-next-fancybox
+  # To install 3.x: https://github.com/theme-next/theme-next-fancybox3
+  # 幻灯片暗箱
+  fancybox: true
+
+  # Added switch option for separated repo in 6.0.0.
+  # Dependencies: https://github.com/theme-next/theme-next-fastclick
+  # 快速下一个点击
+  fastclick: true
+
+  # Added switch option for separated repo in 6.0.0.
+  # Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
+  # 懒加载
+  lazyload: true
+
+  # Progress bar in the top during page loading.
+  # Dependencies: https://github.com/theme-next/theme-next-pace
+  # 顶部加载进度条
+  pace: true
+  # Themes list:
+  # pace-theme-big-counter | pace-theme-bounce | pace-theme-barber-shop | pace-theme-center-atom
+  # pace-theme-center-circle | pace-theme-center-radar | pace-theme-center-simple | pace-theme-corner-indicator
+  # pace-theme-fill-left | pace-theme-flash | pace-theme-loading-bar | pace-theme-mac-osx | pace-theme-minimal
+  pace_theme: pace-theme-minimal
+
+  # 背景动画，只能二选一
+  # Canvas-nest
+  # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
+  canvas_nest:
+    enable: true
+    onmobile: true # display on mobile or not
+    color: '0,0,255' # RGB values, use ',' to separate
+    opacity: 0.5 # the opacity of line: 0~1
+    zIndex: -1 # z-index property of the background
+    count: 99 # the number of lines
+
+  # JavaScript 3D library.
+  # Dependencies: https://github.com/theme-next/theme-next-three
+  # three_waves
+  three_waves: false
+  # canvas_lines
+  canvas_lines: false
+  # canvas_sphere
+  canvas_sphere: false
+
+  # NeedMoreShare2 分享按钮
+  # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
+  # See: https://github.com/revir/need-more-share2, https://github.com/DzmVasileusky/needShareButton
+  # iconStyle: default | box
+  # boxForm: horizontal | vertical
+  # position: top / middle / bottom + Left / Center / Right
+  # networks:
+  # Weibo,Wechat,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,Delicious,StumbleUpon,Pinterest,Facebook,GooglePlus,
+  # Slashdot,Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
+  needmoreshare2:
+    enable: true
+    postbottom:
+      enable: false
+      options:
+        iconStyle: default
+        boxForm: horizontal
+        position: bottomCenter
+        networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+    float:
+      enable: true
+      options:
+        iconStyle: default
+        boxForm: vertical
+        position: middleRight
+        networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+
+  # Valine
+  # You can get your appid and appkey from https://leancloud.cn
+  # More info available at https://valine.js.org
+  valine:
+    enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+    appid: fU17d9o67s0geXihjWWyejLd-gzGzoHsz # your leancloud application appid
+    appkey: d3qlJFPnpCxh9cIzjd0VOWuA # your leancloud application appkey
+    notify: true # mail notifier, See: https://github.com/xCss/Valine/wiki
+    verify: false # Verification code
+    placeholder: 既然来都来了，留下脚印 👣再走吧 # comment box placeholder
+    avatar: mm # gravatar style
+    guest_info: nick,mail,link # custom comment header
+    pageSize: 10 # pagination size
+    visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+    comment_count: false # if false, comment count will only be displayed in post page, not in home page
+
+  # ============================================================= #
+  # =================== External CDN Libraries ================== #
+  # ========================= 外部 CDN 库 ======================== #
+  # ============================================================= #
+  # Script Vendors.
+  # Set a CDN address for the vendor you want to customize.
+  # For example
+  #   jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
+  # Be aware that you should use the same version as internal ones to avoid potential problems.
+  # Please use the https protocol of CDN files when you enable https on your site.
+  vendors:
+    # Internal path prefix. Please do not edit it.
+    _internal: lib
+
+    # Internal version: 2.1.3
+    # Example:
+    # jquery: //cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js
+    # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
+    jquery:
+
+    # Internal version: 2.1.5
+    # See: https://fancyapps.com/fancybox
+    # Example:
+    # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
+    # fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js
+    # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
+    # fancybox_css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css
+    fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
+    fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
+
+    # Internal version: 1.0.6
+    # See: https://github.com/ftlabs/fastclick
+    # Example:
+    # fastclick: //cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js
+    # fastclick: //cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
+    fastclick: //cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js
+
+    # Internal version: 1.9.7
+    # See: https://github.com/tuupola/jquery_lazyload
+    # Example:
+    # lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
+    # lazyload: //cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js
+    lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
+
+    # Internal version: 1.2.1
+    # See: http://velocityjs.org
+    # Example:
+    # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
+    # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
+    # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
+    # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
+    # velocity:
+    # velocity_ui:
+
+    # Internal version: 0.7.9
+    # See: https://faisalman.github.io/ua-parser-js
+    # Example:
+    # ua_parser: //cdn.jsdelivr.net/npm/ua-parser-js@0/src/ua-parser.min.js
+    # ua_parser: //cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.9/ua-parser.min.js
+    ua_parser: //cdn.jsdelivr.net/npm/ua-parser-js@0/src/ua-parser.min.js
+
+    # Internal version: 4.6.2
+    # See: https://fontawesome.com
+    # Example:
+    # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
+    # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
+    fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
+
+    # Internal version: 2.4.1
+    # See: https://www.algolia.com
+    # Example:
+    # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.js
+    # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
+    # algolia_instant_js:
+    # algolia_instant_css:
+
+    # Internal version: 1.0.2
+    # See: https://github.com/HubSpot/pace
+    # Example:
+    # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
+    # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
+    # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
+    # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
+    pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
+    pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
+
+    # Internal version: 1.0.0
+    # See: https://github.com/theme-next/theme-next-canvas-nest
+    # Example:
+    # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
+    # canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
+    canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
+    canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
+
+    # Internal version: 1.0.0
+    # See: https://github.com/theme-next/theme-next-three
+    # Example:
+    three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
+    three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
+    canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
+    canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
+    # three:
+    # three_waves:
+    # canvas_lines:
+    # canvas_sphere:
+
+    # Internal version: 1.0.0
+    # See: https://github.com/zproo/canvas-ribbon
+    # Example:
+    # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
+    # canvas_ribbon:
+
+    # Internal version: 3.3.0
+    # See: https://github.com/ethantw/Han
+    # Example:
+    # han: //cdn.jsdelivr.net/npm/han-css@3/dist/han.min.css
+    # han: //cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css
+    han: //cdn.jsdelivr.net/npm/han-css@3/dist/han.min.css
+
+    # Internal version: 3.3.0
+    # See: https://github.com/vinta/pangu.js
+    # Example:
+    # pangu: //cdn.jsdelivr.net/npm/pangu@3/dist/browser/pangu.min.js
+    # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
+    pangu: //cdn.jsdelivr.net/npm/pangu@3/dist/browser/pangu.min.js
+
+    # Internal version: 1.0.0
+    # See: https://github.com/GoogleChromeLabs/quicklink
+    # Example:
+    # quicklink: //cdn.jsdelivr.net/npm/quicklink@1.0.0/dist/quicklink.umd.js
+    quicklink: //cdn.jsdelivr.net/npm/quicklink@1.0.0/dist/quicklink.umd.js
+
+    # Internal version: 1.0.0
+    # See: https://github.com/revir/need-more-share2
+    # Example:
+    # needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
+    # needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
+    needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
+    needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
+
+    # Internal version: 1.0.0
+    # See: https://github.com/theme-next/theme-next-bookmark
+    # Example:
+    # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
+    bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
+
+    # Internal version: 1.1
+    # See: https://github.com/theme-next/theme-next-reading-progress
+    # Example:
+    # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
+    reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
+
+    # leancloud-storage
+    # See: https://www.npmjs.com/package/leancloud-storage
+    # Example:
+    # leancloud: //cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js
+    # leancloud:
+
+    # valine 评论系统
+    # See: https://github.com/xCss/Valine
+    # Example:
+    valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
+    # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
+    # valine:
+
+    # gitalk
+    # See: https://github.com/gitalk/gitalk
+    # Example:
+    # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+    # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
+    # gitalk_js:
+    # gitalk_css:
+
+    # js-md5
+    # See: https://github.com/emn178/js-md5
+    # Example:
+    # md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
+    # md5:
