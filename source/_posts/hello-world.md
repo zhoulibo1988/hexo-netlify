@@ -26,6 +26,7 @@ tags:   #标签
 	- tomcat
 ```
 ## 2:创建标签
+
 ### 创建标签页面
 ``` bash
 hexo new page tags
@@ -35,14 +36,15 @@ hexo new page tags
 title: tags
 date: 2017-12-02 21:01:24
 type: "tags"
-``` bash
+```
 ## 创建分类
+
 ### 创建分类页面
 ```
 hexo new page categories
 ```
 ### 基本设置
-``` bash
+```
 title: categories
 date: 2017-12-02 21:01:24
 type: "categories"
