@@ -1,38 +1,53 @@
 ---
-title: Hello World
+title: Hexo 创建文章、标签、分类
+
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页
 
-## Quick Start
+## 1:创建文章
 
-### Create a new post
-
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
+### 在hexo下创建一个新的文章
 
 ``` bash
-$ hexo server
+hexo new "文章名称"
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
+生产后会提示你文件路径，一般在hexo/source/_posts下
 
-### Generate static files
+### 文章基本设置
 
 ``` bash
-$ hexo generate
+title: CentOS7下Tomcat启动慢的原因及解决方案
+date: 2017-12-02 21:01:24
+comments: true #是否可评论
+toc: true #是否显示文章目录
+categories: "云服务器" #分类
+tags:   #标签
+	- centOS
+	- tomcat
 ```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
+## 2:创建标签
+### 创建标签页面
 
 ``` bash
-$ hexo deploy
+hexo new page tags
+``` 
+### 基本设置
+``` bash
+title: tags
+date: 2017-12-02 21:01:24
+type: "tags"
+``` 
+## 创建分类
+### 创建分类页面
+``` bash
+hexo new page categories
+```
+### 基本设置
+``` bash
+title: categories
+date: 2017-12-02 21:01:24
+type: "categories"
 ```
 
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+### END
