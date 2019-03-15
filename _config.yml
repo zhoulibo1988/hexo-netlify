@@ -166,6 +166,13 @@ theme_config:
     icons_only: false
     transition: true
   github_banner: https://github.com/zhoulibo1988 || Paynezhuang GitHub
+  # Blog rolls 友情链接
+  links_icon: link
+  links_title: Links
+  links_layout: block
+  # links_layout: inline
+  links:
+    一人夕: https://izpan.com
 
 # 工具栏目录
   toc:
