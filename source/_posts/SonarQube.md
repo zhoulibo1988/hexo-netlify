@@ -10,6 +10,7 @@ tags: [SonarQube]
 
 #### 1.环境、软件准备
 - 本次演示环境，我是在本地机器 Windows 上操作，以下是安装的软件及版本：
+
 ``` 
 	SonarQube：version 6.5
 	 Jdk：version 1.8.0_91
@@ -20,6 +21,7 @@ tags: [SonarQube]
 
 #### 2.SonarQube 安装
 - 命令：
+
 ```
 	set global event_scheduler = 'on';
 	#可以物理修改数据库配置
@@ -31,28 +33,25 @@ tags: [SonarQube]
 - SonarQube 安装很简单，只需去官网下载最新版 zip 安装包到本地，解压执行即可。我解压到本地后的目录 windows系统，解压目录结构如下
 [![目录](https://github.com/zhoulibo1988/img/blob/master/s1.jpg?raw=true "目录")](https://github.com/zhoulibo1988/img/blob/master/s1.jpg?raw=true "目录")
 - 这里简单说下每个目录作用：
-- bin 
-	用来启动 SonarQube 服务，这里已经提供好了不同系统启动 | 停止脚本了，目前提供了 - linux-x86-32、linux-x86-64、macosx-universal-64、windows-x86-32、windows-x86-64
-- conf 
-	用来存放配置文件，若需要修改配置，修改 sonar.properties 文件即可。
-- data 
-	用来存放数据，SonarQube默认使用 h2 数据库存储，同时支持其他如Mysql、Orace、Mssql、Postgresql数据库存储。
-- extensions 
-	用来存放插件 jar 包，以后我们需要安装插件就放在这里。
-- lib 
-	用来存放各种所依赖的 jar 包，包括上边各数据库驱动包 (默认已提供一个版本，如果版本不匹配，则在这里手动更新下)。
-- logs
-	用来存放各日志信息
-- web 
-	用来提供 SonarQube web 网页服务。
 
-#### 4.启动服务
+```
+- bin 用来启动 SonarQube 服务，这里已经提供好了不同系统启动 | 停止脚本了，目前提供了 - linux-x86-32、linux-x86-64、macosx-universal-64、windows-x86-32、windows-x86-64
+- conf  用来存放配置文件，若需要修改配置，修改 sonar.properties 文件即可。
+- data  用来存放数据，SonarQube默认使用 h2 数据库存储，同时支持其他如Mysql、Orace、Mssql、Postgresql数据库存储。
+- extensions  用来存放插件 jar 包，以后我们需要安装插件就放在这里。
+- lib 用来存放各种所依赖的 jar 包，包括上边各数据库驱动包 (默认已提供一个版本，如果版本不匹配，则在这里手动更新下)。
+- logs 用来存放各日志信息
+- web  用来提供 SonarQube web 网页服务。
+```
+####  4.启动服务
 - 启动双击： StartSonar.bat
 - 关闭：直接找到java进程关闭
 - 访问地址：http://localhost:9000
 - 登录账号：admin  密码：admin
+
 #### 5.修改数据库
 - SonarQube 默认服务端口为 9000，默认数据库为 h2，这些都是可以修改配置的，我们只需要修改/conf/sonar.properties文件即可。以修改配置 Mysql 数据库为例：
+
 ```
 sonar.jdbc.username=sonar
 sonar.jdbc.password=sonar
@@ -60,6 +59,7 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 2、本地 Mysql 创建数据库 这里就不需要说怎么做了，我想大家都明白
 ```
 - 修改完成后，重启服务即可，我们会发现SonarQube已经帮我们在本地 Mysql 数据库 sonar 中创建好了所需各表
+
 #### 6.插件安装
 - 安装两个很实用的插件，一个是 Chinese Pack（SonarQube的汉化包），一个是 Checkstyle（检测代码风格
 - Chinese Pack 插件安装：
@@ -70,7 +70,10 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 - 汉化成功后如图
 [![s4](https://github.com/zhoulibo1988/img/blob/master/s4.jpg?raw=true "s4")](https://github.com/zhoulibo1988/img/blob/master/s4.jpg?raw=true "s4")
 - Checkstyle 插件安装:
-```  上边 Chinese Pack 插件安装时通过直接将 jar 包放到插件目录完成安装，我们也可以在 SonarQube 网页上直接点击安装。admin 登录，点击 配置 -> 系统 -> 更新中心 -> Available -> Search，输入 CheckStyle，在搜素结果中找到 CheckStyle 插件点击 Install，等待下载完成后，按照页面提示点击 Restart 自动重启服务即可完成安装
+
+```  
+上边 Chinese Pack 插件安装时通过直接将 jar 包放到插件目录完成安装，我们也可以在 SonarQube 网页上直接点击安装。admin 登录，点击 配置 -> 系统 -> 更新中心 -> Available -> Search，输入 CheckStyle，在搜素结果中找到 CheckStyle 插件点击 Install，等待下载完成后，按照页面提示点击 Restart 自动重启服务即可完成安装
+
 ```
 [![s5](https://github.com/zhoulibo1988/img/blob/master/s5.png?raw=true "s5")](https://github.com/zhoulibo1988/img/blob/master/s5.png?raw=true "s5")
 
@@ -85,6 +88,7 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 - 下面我们以一个 Java Maven 项目 mavenDemo 为例，看下如何配置，以及 SonarQube 分析结果查看。注意：这里有个兼容性选择问题，如果 SonarQube >= 4.5，那么 maven-sonar-plugin >= 2.7，如果 SonarQube < 4.5，那么 maven-sonar-plugin = 2.6；如果 Maven >= 3.0，那么maven-sonar-plugin >= 3.1，如果 Maven < 3.0，那么 maven-sonar-plugin = 3.0.2。
 
 - 我的maven版本是3.3.9 对应的文件是settings.xml 版本低一点的对应的文件可能是setting.xml
+
 ```
 		<profile>
 			<id>sonar</id>
@@ -102,16 +106,33 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 		</properties>
 	</profile>
 ```
-	其中sonar.host.url 值就是 上文启动的sonar 服务器地址。
+- 其中sonar.host.url 值就是 上文启动的sonar 服务器地址。
 
-#### 8.对maven项目进行分析
+####  8.对maven项目进行分析
 - 在你的maven项目下面进行命令操作
+
 ```
 mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar
+
 ```
 - 出现: BUILD SUCCESS 标识之后 刷新界面查看 :
 - 最终效果
 [![s7](https://github.com/zhoulibo1988/img/blob/master/s7.jpg?raw=true"s7")](https://github.com/zhoulibo1988/img/blob/master/s7.jpg?raw=true "s7")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
