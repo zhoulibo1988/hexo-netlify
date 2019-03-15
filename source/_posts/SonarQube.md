@@ -27,7 +27,7 @@ tags: [SonarQube]
 	 加上:
 	event_scheduler=ON
 ```
-#### 3.存储过程 删除前7天的数据
+#### 3.SonarQube 安装
 - SonarQube 安装很简单，只需去官网下载最新版 zip 安装包到本地，解压执行即可。我解压到本地后的目录 windows系统，解压目录结构如下
 [![目录](https://github.com/zhoulibo1988/img/blob/master/s1.jpg?raw=true "目录")](https://github.com/zhoulibo1988/img/blob/master/s1.jpg?raw=true "目录")
 - 这里简单说下每个目录作用：
@@ -46,12 +46,12 @@ tags: [SonarQube]
 - web 
 	用来提供 SonarQube web 网页服务。
 
-### 4.启动服务
+#### 4.启动服务
 - 启动双击： StartSonar.bat
 - 关闭：直接找到java进程关闭
 - 访问地址：http://localhost:9000
 - 登录账号：admin  密码：admin
-### 5.修改数据库
+#### 5.修改数据库
 - SonarQube 默认服务端口为 9000，默认数据库为 h2，这些都是可以修改配置的，我们只需要修改/conf/sonar.properties文件即可。以修改配置 Mysql 数据库为例：
 ```
 sonar.jdbc.username=sonar
@@ -60,7 +60,7 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 2、本地 Mysql 创建数据库 这里就不需要说怎么做了，我想大家都明白
 ```
 - 修改完成后，重启服务即可，我们会发现SonarQube已经帮我们在本地 Mysql 数据库 sonar 中创建好了所需各表
-### 6.插件安装
+#### 6.插件安装
 - 安装两个很实用的插件，一个是 Chinese Pack（SonarQube的汉化包），一个是 Checkstyle（检测代码风格
 - Chinese Pack 插件安装：
 - SonarQube 网页的汉化包，安装完该插件后，Web 页面大部分都翻译成中文了，是不是一下子就简介明了啦！首先下载插件 sonar-l10n-zh，源码托管在 github 上，下载对应兼容版本的jar (注意：README上的兼容列表，我本地 SonarQube 版本6.5，所以下载插件对应版本是1.17。)
@@ -81,7 +81,7 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 
 - SonarQube 支持分析的语言有很多，像Java、Python、Php、C/C++、C#、HTML、JavaScript、PL/SQL、Objective C等20+语言，当我们需要支持分析什么语言时，只需要去插件中心安装对应语言的插件即可，非常方便，可扩展性强。
 
-### 使用 SonarQube 分析 Maven 项目
+#### 7.使用 SonarQube 分析 Maven 项目
 - 下面我们以一个 Java Maven 项目 mavenDemo 为例，看下如何配置，以及 SonarQube 分析结果查看。注意：这里有个兼容性选择问题，如果 SonarQube >= 4.5，那么 maven-sonar-plugin >= 2.7，如果 SonarQube < 4.5，那么 maven-sonar-plugin = 2.6；如果 Maven >= 3.0，那么maven-sonar-plugin >= 3.1，如果 Maven < 3.0，那么 maven-sonar-plugin = 3.0.2。
 
 - 我的maven版本是3.3.9 对应的文件是settings.xml 版本低一点的对应的文件可能是setting.xml
@@ -103,7 +103,7 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 	</profile>
 ```
 - 其中sonar.host.url 值就是 上文启动的sonar 服务器地址。
-### 对maven项目进行分析
+#### 8.对maven项目进行分析
 - 在你的maven项目下面进行命令操作
 ```
 mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar
