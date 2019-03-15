@@ -27,7 +27,7 @@ tags: [SonarQube]
 	 加上:
 	event_scheduler=ON
 ```
-#### 3.SonarQube 安装
+#### 3.SonarQube 安装很简单
 - SonarQube 安装很简单，只需去官网下载最新版 zip 安装包到本地，解压执行即可。我解压到本地后的目录 windows系统，解压目录结构如下
 [![目录](https://github.com/zhoulibo1988/img/blob/master/s1.jpg?raw=true "目录")](https://github.com/zhoulibo1988/img/blob/master/s1.jpg?raw=true "目录")
 - 这里简单说下每个目录作用：
@@ -72,7 +72,7 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 - Checkstyle 插件安装:
 ```  上边 Chinese Pack 插件安装时通过直接将 jar 包放到插件目录完成安装，我们也可以在 SonarQube 网页上直接点击安装。admin 登录，点击 配置 -> 系统 -> 更新中心 -> Available -> Search，输入 CheckStyle，在搜素结果中找到 CheckStyle 插件点击 Install，等待下载完成后，按照页面提示点击 Restart 自动重启服务即可完成安装
 ```
-[![s5](https://github.com/zhoulibo1988/img/blob/master/s5.jpg?raw=true "s5")](https://github.com/zhoulibo1988/img/blob/master/s5.jpg?raw=true "s5")
+[![s5](https://github.com/zhoulibo1988/img/blob/master/s5.png?raw=true "s5")](https://github.com/zhoulibo1988/img/blob/master/s5.png?raw=true "s5")
 
 - 也可以去github上面去下载相对应的版本，我这里选择为 3.7
 - 下载地址：https://github.com/checkstyle/sonar-checkstyle/releases/tag/3.7
@@ -86,8 +86,8 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 
 - 我的maven版本是3.3.9 对应的文件是settings.xml 版本低一点的对应的文件可能是setting.xml
 ```
-<profile>
-		<id>sonar</id>
+		<profile>
+			<id>sonar</id>
 		<activation>
 			<activeByDefault>true</activeByDefault>
 		</activation>
@@ -102,7 +102,8 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncodi
 		</properties>
 	</profile>
 ```
-- 其中sonar.host.url 值就是 上文启动的sonar 服务器地址。
+	其中sonar.host.url 值就是 上文启动的sonar 服务器地址。
+
 #### 8.对maven项目进行分析
 - 在你的maven项目下面进行命令操作
 ```
@@ -111,7 +112,6 @@ mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar
 - 出现: BUILD SUCCESS 标识之后 刷新界面查看 :
 - 最终效果
 [![s7](https://github.com/zhoulibo1988/img/blob/master/s7.jpg?raw=true"s7")](https://github.com/zhoulibo1988/img/blob/master/s7.jpg?raw=true "s7")
-
 
 
 
